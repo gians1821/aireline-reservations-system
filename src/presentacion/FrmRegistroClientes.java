@@ -86,6 +86,8 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         btnConsultarAsiento1 = new javax.swing.JButton();
         btnConsultarAsiento2 = new javax.swing.JButton();
         btnMostrarRutas = new javax.swing.JButton();
+        btnActualizarCliente = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,8 +97,9 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRO DE CLIENTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 210, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 330, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/avatar.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
@@ -104,7 +107,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Gabriola", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setText("SELECCIONAR EMPLEADO:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 200, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 270, 40));
 
         jComboBox1.setModel(model);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +120,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 102, 0));
         jLabel4.setText("DATOS DEL CLIENTE");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 190, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 300, 40));
 
         jLabel5.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -261,7 +264,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 btnConsultarAsiento2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultarAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 160, 30));
+        jPanel1.add(btnConsultarAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 160, 30));
 
         btnMostrarRutas.setBackground(new java.awt.Color(0, 204, 204));
         btnMostrarRutas.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 14)); // NOI18N
@@ -272,13 +275,35 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 btnMostrarRutasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrarRutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 740, 330, 50));
+        jPanel1.add(btnMostrarRutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 740, 430, 50));
+
+        btnActualizarCliente.setBackground(new java.awt.Color(204, 204, 255));
+        btnActualizarCliente.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 12)); // NOI18N
+        btnActualizarCliente.setForeground(new java.awt.Color(0, 0, 0));
+        btnActualizarCliente.setText("ACTUALIZAR CLIENTE");
+        btnActualizarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 160, 30));
+
+        btnAtras.setBackground(new java.awt.Color(255, 102, 102));
+        btnAtras.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnAtras.setForeground(new java.awt.Color(0, 0, 0));
+        btnAtras.setText("ATRAS");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 770, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,11 +341,11 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
     private void btnCalcularCostoMaletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularCostoMaletasActionPerformed
         try{
             int montoTotal;
-            int cantidad= Integer.parseInt(txtCantidadMaletas.getText());
-            int monto=cantidad*500;
-            montoTotal=costoPasaje + monto;
+            int cantidad = Integer.parseInt(txtCantidadMaletas.getText());
+            int monto = cantidad * 500;
+            montoTotal = costoPasaje + monto;
             txtCosto.setText(String.valueOf(montoTotal));
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Ingrese un valor válido");
         }
     }//GEN-LAST:event_btnCalcularCostoMaletasActionPerformed
@@ -330,61 +355,61 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         switch(indice){
             case 0 -> {
                 //EEUU
-                costoPasaje=2800;
+                costoPasaje = 2800;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Boeing 737");
             }
             case 1 -> {
                 //CANADA
-                costoPasaje= 3200;
+                costoPasaje = 3200;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Airbus A320");
             }
             case 2 -> {
                 //REINO UNIDO
-                costoPasaje= 5700;
+                costoPasaje = 5700;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Boeing 777");
             }
             case 3 -> {
                 //ESPAÑA
-                costoPasaje= 3000;
+                costoPasaje = 3000;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Airbus A330");
             }
             case 4 -> {
                 //BRASIL
-                costoPasaje= 1500;
+                costoPasaje = 1500;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Boeing 767");
             }
             case 5 -> {
                 //FRANCIA
-                costoPasaje= 3400;
+                costoPasaje = 3400;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Airbus A350");
             }
             case 6 -> {
                 //ALEMANIA
-                costoPasaje= 4000;
+                costoPasaje = 4000;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Embraer E-Jet");
             }
             case 7 -> {
                 //ITALIA
-                costoPasaje= 4200;
+                costoPasaje = 4200;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Bombardier CRJ");
             }
             case 8 -> {
                 //JAPON
-                costoPasaje= 7000;
+                costoPasaje = 7000;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("McDonnell Douglas MD-80");
             }
             case 9 -> {
                 //AUSTRALIA
-                costoPasaje= 8000;
+                costoPasaje = 8000;
                 txtCosto.setText(String.valueOf(costoPasaje));
                 txtNombreAvion.setText("Sukhoi Superjet 100");
             }   
@@ -407,7 +432,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 else{
                     JOptionPane.showMessageDialog(null, "Escoja otro asiento por favor");
                 }
-                int costo = Integer.parseInt(txtCosto.getText());
+                int costo = costoPasaje;
                 String id = txtID.getText();
                 String nombreAvion = txtNombreAvion.getText();
                 int maletas = Integer.parseInt(txtCantidadMaletas.getText());
@@ -474,43 +499,20 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         frameRutas.setVisible(true);
     }//GEN-LAST:event_btnMostrarRutasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnActualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarClienteActionPerformed
+        this.setVisible(false);
+        new FrmActualizarCliente(lc).setVisible(true);
+    }//GEN-LAST:event_btnActualizarClienteActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmRegistroClientes().setVisible(true);
-            }
-        });
-    }
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        this.dispose();
+        new FrmRegistroEmpleados().setVisible(true);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizarCliente;
     private javax.swing.JButton btnAsignarID;
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCalcularCosto;
     private javax.swing.JButton btnCalcularCostoMaletas;
     private javax.swing.JButton btnConsultarAsiento;

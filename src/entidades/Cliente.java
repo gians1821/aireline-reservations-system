@@ -100,8 +100,10 @@ public class Cliente {
     public double calcularPMaletas(int maletas){
         return 500*maletas;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombres=" + nombres + ", dni=" + dni + ", destino=" + destino + ", nAsiento=" + nAsiento + ", costoPasaje=" + costoPasaje + ", id=" + id + ", nombreAvion=" + nombreAvion + ", maletas=" + maletas + '}';
+    }    
     
 }

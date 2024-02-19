@@ -47,7 +47,6 @@ public class ListaClientes {
     
     public void Buscar(String id){ //el metodo que lo llama se asegura que el id se encuentre en la lista de clientes
         Nodo p = L;
-        int i=0;
         while(p!=null){
             if(p.getInfo().getId().compareToIgnoreCase(id)==0){
                 JOptionPane.showMessageDialog(null, 
@@ -62,6 +61,17 @@ public class ListaClientes {
             }
             p = p.getSgte();
         }
+    }
+    
+    public Cliente buscar (String id) {
+        Nodo p = L;
+        while (p != null) {
+            if (p.getInfo().getId().compareToIgnoreCase(id) == 0) {
+                return p.getInfo();
+            }
+            p = p.getSgte();
+        }
+        return null;
     }
     
     public boolean Eliminar(Cliente id){
@@ -87,7 +97,7 @@ public class ListaClientes {
     }
     
     
-    public void Modificar(String idCliente, int nuevoNumeroAsiento, String nuevoDestino, String nuevoAvion) {
+    public void Modificar(String idCliente, double nuevoCostoPasaje, int nuevoNumeroAsiento, String nuevoDestino, String nuevoAvion) {
         if (L == null) {
             JOptionPane.showMessageDialog(null, "La lista está vacía");
             return;
@@ -98,6 +108,7 @@ public class ListaClientes {
                 p.getInfo().setnAsiento(nuevoNumeroAsiento);
                 p.getInfo().setDestino(nuevoDestino);
                 p.getInfo().setNombreAvion(nuevoAvion);
+                p.getInfo().setCostoPasaje(nuevoCostoPasaje);
                 JOptionPane.showMessageDialog(null, "Cliente modificado exitosamente");
                 return;
             }
