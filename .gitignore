@@ -1,0 +1,20 @@
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbactions.xml
+/nb-configuration.xml
+/*.nbattrs
+
+# Build artifacts
+/build/
+
+# Libraries
+/lib/
+
+# Compiled files
+*.class
+*.jar
+
+# Logs
+*.log
