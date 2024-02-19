@@ -19,6 +19,7 @@ public class FrmMostrarClientes extends javax.swing.JFrame {
     
     public FrmMostrarClientes() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

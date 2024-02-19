@@ -88,6 +88,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         btnMostrarRutas = new javax.swing.JButton();
         btnActualizarCliente = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        btnActualizarCliente1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,7 +100,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRO DE CLIENTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 330, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 330, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/avatar.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
@@ -107,7 +108,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Gabriola", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setText("SELECCIONAR EMPLEADO:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 270, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 270, 40));
 
         jComboBox1.setModel(model);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +116,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 170, 30));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 170, 30));
 
         jLabel4.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 102, 0));
@@ -253,7 +254,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 btnConsultarAsiento1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultarAsiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 160, 30));
+        jPanel1.add(btnConsultarAsiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 160, 30));
 
         btnConsultarAsiento2.setBackground(new java.awt.Color(204, 204, 255));
         btnConsultarAsiento2.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 12)); // NOI18N
@@ -264,7 +265,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 btnConsultarAsiento2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultarAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 160, 30));
+        jPanel1.add(btnConsultarAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 160, 30));
 
         btnMostrarRutas.setBackground(new java.awt.Color(0, 204, 204));
         btnMostrarRutas.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 14)); // NOI18N
@@ -286,7 +287,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
                 btnActualizarClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 160, 30));
+        jPanel1.add(btnActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 160, 30));
 
         btnAtras.setBackground(new java.awt.Color(255, 102, 102));
         btnAtras.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -298,6 +299,17 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 770, 120, 40));
+
+        btnActualizarCliente1.setBackground(new java.awt.Color(204, 0, 0));
+        btnActualizarCliente1.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 12)); // NOI18N
+        btnActualizarCliente1.setForeground(new java.awt.Color(204, 255, 204));
+        btnActualizarCliente1.setText("CANCELAR VUELO");
+        btnActualizarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarCliente1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizarCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 160, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -509,8 +521,14 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
         new FrmRegistroEmpleados().setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void btnActualizarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarCliente1ActionPerformed
+        this.dispose();
+        new FrmCancelacionVuelos(lc).setVisible(true);
+    }//GEN-LAST:event_btnActualizarCliente1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarCliente;
+    private javax.swing.JButton btnActualizarCliente1;
     private javax.swing.JButton btnAsignarID;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCalcularCosto;
