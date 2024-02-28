@@ -22,7 +22,7 @@ public class FrmRutas extends javax.swing.JFrame {
         gr.insertarVertice(0, "PERU");
         gr.insertarVertice(1, "CANADA");
         gr.insertarVertice(2, "EE.UU");
-        gr.insertarVertice(3, "REYNO UNIDO");
+        gr.insertarVertice(3, "REINO UNIDO");
         gr.insertarVertice(4, "ESPAÑA");
         gr.insertarVertice(5, "BRASIL");
         gr.insertarVertice(6, "FRANCIA");

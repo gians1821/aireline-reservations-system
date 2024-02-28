@@ -493,7 +493,7 @@ public class FrmRegistroClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsultarAsiento1ActionPerformed
 
     private void btnConsultarAsiento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarAsiento2ActionPerformed
-        String id = JOptionPane.showInputDialog(this,"Ingrese DNI del cliente a consultar");
+        String id = JOptionPane.showInputDialog(this,"Ingrese ID del cliente a consultar");
         if(lc.verificarID(id)){
             lc.Buscar(id);
         }

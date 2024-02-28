@@ -52,9 +52,10 @@ public class GrafoMatriz {
     
     
     public String obtenerNombreVertice(int indice) {
-    if (indice >= 0 && indice < numVertice && vertices[indice] != null) {
+    if(indice>= 0 && indice < numVertice && vertices[indice]!= null) {
         return vertices[indice].getNombre();
-    } else {
+    } 
+    else {
         // Manejar el caso en que el índice esté fuera de rango o el vértice sea nulo
         return "Vértice no encontrado";
     }
@@ -64,7 +65,7 @@ public class GrafoMatriz {
         int distanciaMinima = Integer.MAX_VALUE;
         int indiceMinimo = -1;
 
-        for (int vertice = 0; vertice < numVertice; vertice++)
+        for(int vertice= 0; vertice< numVertice; vertice++)
             if (!visitados[vertice] && distancias[vertice] <= distanciaMinima) {
                 distanciaMinima = distancias[vertice];
                 indiceMinimo = vertice;
@@ -78,24 +79,38 @@ public class GrafoMatriz {
         int[] distancias = new int[numVertice];
         Boolean[] visitados = new Boolean[numVertice];
         int[] predecesores = new int[numVertice];
-        for (int i = 0; i < numVertice; i++) {
-            distancias[i] = Integer.MAX_VALUE;
-            visitados[i] = false;
-            predecesores[i] = -1;   
+        
+        
+        //ESTADOS INICIALES DE TODOS LOS NODOS
+
+        for(int i= 0; i< numVertice; i++) { //Se recorre todos los nodos del grafo
+            distancias[i]= Integer.MAX_VALUE; // Declaramos todas las distancias en infinito
+            visitados[i]= false; //Colocamos a todos los nodos como NO visitados
+            predecesores[i]= -1;   //Indica que que no se ha encontrado ningún predecesor
         }
 
-        distancias[nodoOrigen] = 0;
+        distancias[nodoOrigen] = 0; //Declaramos la distancia del nodo origen así sisma como 0
 
-        for (int count = 0; count < numVertice - 1; count++) {
-            int u = MinDistancia(distancias, visitados);
+        
+        //ESTADO FINAL DE LOS NODOS
+        
+        //Recorremos todos los vertices hasta numVertice-1 ya que nos aseguraremos de visitar todos los nodos excepto el nodo del inicio
+        for(int c=0;c< numVertice-1;c++) {
+            //Selecciona el nodo con la distancia mínima no visitada utilizando la función MinDistancia y lo almacena en la variable u.
+            int u= MinDistancia(distancias,visitados);
+            //Marcamos el nodo visitado en true
             visitados[u] = true;
-
-            for (int v = 0; v < numVertice; v++)
-                if (!visitados[v] && ma[u][v] != 0 &&
-                    distancias[u] != Integer.MAX_VALUE &&
-                    distancias[u] + ma[u][v] < distancias[v]) {
-                    distancias[v] = distancias[u] + ma[u][v];
-                    predecesores[v] = u;
+            //Ahora iteramos sobre los nodos vecinos
+            for(int v= 0; v <numVertice; v++)
+                if(!visitados[v] && ma[u][v]!= 0 && //Si el nodo vecino no ha sido visitado y si existe una conexción entre el nodo seleccionado y el nodo vecino
+                    //Si el camino hacia el nodo vecino a través del nodo seleccionado es mas corto que el camino actual almacenado en distancia[v]
+                    distancias[u]!= Integer.MAX_VALUE &&
+                    distancias[u]+ ma[u][v] < distancias[v])
+                {
+                    //Actualizamos la distancia mas corta hacia el nodo vecino
+                    distancias[v]= distancias[u] + ma[u][v];
+                    //Actualizamos el predecesor del nodo vecino en el camino mas corto
+                    predecesores[v]= u;
                 }
         }
         // Mostrar el camino más corto para el destino especificado

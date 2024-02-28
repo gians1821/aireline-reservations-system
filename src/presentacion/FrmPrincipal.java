@@ -30,8 +30,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         btnRegistrarEmpleado = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -45,21 +43,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("HP Simplified Jpan", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("AEROLINEA PERU-AIR");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 260, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 260, 50));
 
         jLabel5.setFont(new java.awt.Font("Gabriola", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("¡BIENVENIDO!");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 200, 60));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pilot.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("REGISTRAR CAPITAN");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 200, 50));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 200, 60));
 
         btnRegistrarEmpleado.setBackground(new java.awt.Color(255, 153, 51));
         btnRegistrarEmpleado.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
@@ -70,7 +59,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnRegistrarEmpleadoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 190, 50));
+        jPanel1.add(btnRegistrarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 190, 50));
 
         btnSalir.setBackground(new java.awt.Color(255, 153, 153));
         btnSalir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -81,10 +70,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 170, 60));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 170, 60));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/empleado.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imageonline-co-brightnessadjusted.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 680));
@@ -151,12 +140,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarEmpleado;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
